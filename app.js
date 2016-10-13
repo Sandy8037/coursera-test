@@ -2,12 +2,13 @@
   'use strict';
 
   angular.module('myFirstApp', [])
-  .controller('myFirstController', function ($scope) {
+  .controller('myFirstController', myFirstController);
+
+  function myFirstController($scope, $filter) {
     $scope.name = "";
-    $scope.totalValue = 0;
-    $scope.displayNumeric = function () {
-      var total = $scope.name.length;
-      $scope.totalValue = total;
+    $scope.upper = function () {
+      var upCase = $filter('uppercase');
+      $scope.name = upCase($scope.name);
     };
-  });
+  };
 })();
