@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- <script src="test.js" charset="utf-8"></script> -->
+    <title>Closure Example</title>
+  </head>
+  <body>
+    <h1>Closure Example</h1>
+    <script type="text/javascript">
+    var add_the_handler = function (nodes) {
+      var i;
+      for(i = 0; i < nodes.length; i +=1){
+        nodes[i].onclick = function (e) {
+          alert(i);
+        };
+      }
+    };
+    add_the_handler(document.body.h1);
+    </script>
+  </body>
+</html>
