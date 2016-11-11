@@ -1,14 +1,30 @@
-function Circle (radius) {
-  this.radius = radius;
+document.addEventListener("DOMContentLoaded",
+function (event) {
+  function sayHello (event) {
+    var name = document.getElementById("name").value;
+    var message = "<h2>Hello " + name + "</h2>";
+    document.getElementById("content").innerHTML = message;
 
-};
+    if (name === "Sandy") {
+      var title = document.querySelector("#title").textContent;
+      title += "!";
+      document.querySelector("#title").textContent = title;
+    }
+  }
 
-Circle.prototype.getArea = function () {
-  return Math.PI * Math.pow(this.radius, 2);
-};
+  // Unobtrusive event binding
+  document.querySelector("button").addEventListener("click",
+  sayHello);
 
-var myCircle = new Circle(10);
-console.log(myCircle.getArea());
+  // document.querySelector("button").onclick = sayHello;
 
-var myOtherCircle = new Circle(20);
-console.log(myOtherCircle.getArea());
+  document.querySelector("body").addEventListener("mousemove",
+  function (event) {
+    if (event.shiftKey === true) {
+      console.log(event.clientX);
+      console.log(event.clientY);
+    }
+  }
+);
+}
+);

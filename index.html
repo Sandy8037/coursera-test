@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html ng-app="myFirstApp">
+<html>
   <head>
     <meta charset="utf-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="app.js" charset="utf-8"></script>
-    <title>AngularJS</title>
+    <script src="js/script.js"></script>
+    <title>Html example</title>
   </head>
   <body>
-    <h1>AngularJS</h1>
-    <div ng-controller="myFirstController">
-      <input type="text" ng-model="name" ng-blur="upper();">{{name}}
-    </div>
+    <h1 id="title">Hello World</h1>
+    <p>
+      Say hello
+      <input id="name" type="text">
+      <button>Say Hello</button>
+    </p>
+    <div id="content"></div>
+
   </body>
 </html>
